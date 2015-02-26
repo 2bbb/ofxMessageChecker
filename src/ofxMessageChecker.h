@@ -34,8 +34,8 @@ class ofxMessageChecker {
 public:
     struct Message {
         int messageID; // message.ROWID
-        string message;
-        string userAccount; // message.text
+        string message; // message.text
+        string userAccount; // handle.id
         int timestamp; // message.date
         bool hasAttachment; // if attachmentPath != ""
         string attachmentPath; // attachment.filename
