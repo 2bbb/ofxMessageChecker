@@ -10,7 +10,7 @@ read message data of Message.app
 
 ### ofxMessageChecker
 
-* void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true, 
+#### void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true, 
 
 float updateInterval = 3.0f)
 	* _computerUseName_ : your account name i.e. /User/**YourComputerUserName**/
@@ -18,12 +18,12 @@ float updateInterval = 3.0f)
 	* _bAutoUpdate_ : if set false, you must call *ofxMessageChecker::update()* manually.
 	* _updateInterval_ : if _bAutoUpdate_ is **true** then *update()* is called every _updateInterval_ sec.
 
-* void update()
+#### void update()
 
 if you set disable auto update then you must call this method manually.
 
-* enableAutoUpdate()
-* disableAutoUpdate()
+#### void enableAutoUpdate()
+#### void disableAutoUpdate()
 
 change auto update mode.
 

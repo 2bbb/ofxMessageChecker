@@ -116,9 +116,10 @@ private:
     }
     
     void updateImpl() {
-        SQLite::Database sqlite(databasePath);
-        string queryString = ofVAArgsToString(OFX_MESSAGE_CHECKER_QUERY_FORMAT, latestID);
         try {
+            SQLite::Database sqlite(databasePath);
+            string queryString = ofVAArgsToString(OFX_MESSAGE_CHECKER_QUERY_FORMAT, latestID);
+            
             SQLite::Statement query(sqlite, queryString);
             while(query.executeStep()) {
                 Message m;
