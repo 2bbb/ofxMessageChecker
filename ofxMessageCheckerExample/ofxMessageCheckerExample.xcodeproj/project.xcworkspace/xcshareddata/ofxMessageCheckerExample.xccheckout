@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>75FC28B7-E485-4B82-9BA7-5913425CBCD3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>40B99DBDD871EA5B330D71049CAE1E31A325ADA4</key>
+		<string>github.com:roxlu/ofxSQLite.git</string>
+		<key>A82C0ABFD7ACBB96A8DACF462A005A3A654155C7</key>
+		<string>github.com:bakercp/ofxSQLiteCpp.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>40B99DBDD871EA5B330D71049CAE1E31A325ADA4</key>
+		<string>ofxSQLite/</string>
+		<key>A82C0ABFD7ACBB96A8DACF462A005A3A654155C7</key>
+		<string>ofxSQLiteCpp/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:roxlu/ofxSQLite.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>40B99DBDD871EA5B330D71049CAE1E31A325ADA4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>40B99DBDD871EA5B330D71049CAE1E31A325ADA4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxSQLite</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A82C0ABFD7ACBB96A8DACF462A005A3A654155C7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxSQLiteCpp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
