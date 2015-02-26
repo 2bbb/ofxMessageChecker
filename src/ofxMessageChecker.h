@@ -46,18 +46,26 @@ public:
         disableAutoUpdate();
     }
     
-    void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true) {
+    void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true, float updateInterval = 3.0f) {
         userName = computerUserName;
         databasePath = string("/Users/") + userName + "/Library/Messages/chat.db";
         this->latestID = latestID;
+        this->updateInterval = updateInterval;
+        latestUpdateTime = 0.0f;
         
         setAutoUpdate(bAutoUpdate);
     }
     
     void update() {
-        if(!isAutoUpdate) {
-            updateImpl();
-        }
+        updateImpl();
+    }
+    
+    int getLatestMessageID() const {
+        return latestID;
+    }
+    
+    float getLatestUpdateTime() const {
+        return latestUpdateTime;
     }
     
     void setAutoUpdate(bool bAutoUpdate) {
@@ -68,16 +76,28 @@ public:
         }
     }
     
+    bool isAutoUpdate() const {
+        return bAutoUpdate;
+    }
+    
+    void setUpdateInterval(float updateInterval) {
+        this->updateInterval = updateInterval;
+    }
+    
+    float getUpdateInterval() const {
+        return updateInterval;
+    }
+    
     void enableAutoUpdate() {
-        if(!isAutoUpdate) {
-            isAutoUpdate = true;
+        if(!isAutoUpdate()) {
+            bAutoUpdate = true;
             ofAddListener(ofEvents().update, this, &ofxMessageChecker::updateImpl, OF_EVENT_ORDER_BEFORE_APP);
         }
     }
     
     void disableAutoUpdate() {
-        if(isAutoUpdate) {
-            isAutoUpdate = false;
+        if(isAutoUpdate()) {
+            bAutoUpdate = false;
             ofRemoveListener(ofEvents().update, this, &ofxMessageChecker::updateImpl, OF_EVENT_ORDER_BEFORE_APP);
         }
     }
@@ -85,10 +105,14 @@ public:
 private:
     string userName;
     string databasePath;
-    bool isAutoUpdate;
+    bool bAutoUpdate;
+    float updateInterval;
+    float latestUpdateTime;
     
     void updateImpl(ofEventArgs & args) {
-        updateImpl();
+        if(ofGetElapsedTimef() < latestUpdateTime + updateInterval) {
+            updateImpl();
+        }
     }
     
     void updateImpl() {
@@ -116,6 +140,7 @@ private:
         } catch (std::exception &e) {
             ofLogError() << "SQLite exception: " << e.what();
         }
+        latestUpdateTime = ofGetElapsedTimef();
     }
     
     int latestID;

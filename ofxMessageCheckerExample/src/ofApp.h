@@ -7,9 +7,10 @@ class ofApp : public ofBaseApp{
 public:
     void setup() {
         ofAddListener(checker.gotMessage, this, &ofApp::gotMessageListener);
-        checker.setup("Your User Name Here");
         // ex:
-        // checker.setup("2bit");
+        //     checker.setup("2bit");
+        // i.e. /Users/[Your User Name]/
+        checker.setup("Your User Name Here");
     }
     void gotMessageListener(ofxMessageChecker::Message &m) {
         ofLogNotice() << m.messageID << ":" << m.message << " from " << m.userAccount;
