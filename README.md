@@ -10,9 +10,8 @@ read message data of Message.app
 
 ### ofxMessageChecker
 
-#### void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true, 
+#### void setup(const string &computerUserName, int latestID = 0, bool bAutoUpdate = true, float updateInterval = 3.0f)
 
-float updateInterval = 3.0f)
 	* _computerUseName_ : your account name i.e. /User/**YourComputerUserName**/
 	* _latestID_ : will read from this id
 	* _bAutoUpdate_ : if set false, you must call *ofxMessageChecker::update()* manually.
